@@ -1,0 +1,126 @@
+.quote-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+
+  z-index: 9999;
+}
+
+
+.quote-popup.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.quote-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-box input,
+.quote-box textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.quote-box button {
+  background: #a77b55;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* SUCCESS POPUP BACKGROUND */
+.success-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* SHOW */
+.success-popup.active {
+  display: flex;
+}
+
+/* BOX */
+.success-box {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 320px;
+  animation: popupFade 0.4s ease;
+}
+
+.success-box h2 {
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.success-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.success-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #a77b55;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+@keyframes popupFade {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
