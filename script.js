@@ -203,17 +203,17 @@ if (btn) {
   let toggled = false;
 
   const set1 = [
-    "images/Portfolio/img01.jpg",
-    "images/Portfolio/img02.jpg",
-    "images/Portfolio/img03.jpg",
-    "images/Portfolio/img04.jpg"
+    "Assets/Portfolio/img01.jpg",
+    "Assets/Portfolio/img02.jpg",
+    "Assets/Portfolio/img03.jpg",
+    "Assets/Portfolio/img04.jpg"
   ];
 
   const set2 = [
-    "images/Portfolio/img05.jpg",
-    "images/Portfolio/img06.jpg",
-    "images/Portfolio/img07.jpg",
-    "images/Portfolio/img08.jpg"
+    "Assets/Portfolio/img05.jpg",
+    "Assets/Portfolio/img06.jpg",
+    "Assets/Portfolio/img07.jpg",
+    "Assets/Portfolio/img08.jpg"
   ];
 
   btn.addEventListener("click", () => {
@@ -236,7 +236,7 @@ if (btn) {
       }, 200);
     });
 
-    btn.innerText = toggled ? "See More Projects" : "Show Less";
+    btn.innerText = toggled ? "See More" : "Show Less";
     toggled = !toggled;
   });
 
@@ -423,9 +423,31 @@ document.getElementById("quoteBtn").addEventListener("click", async () => {
     btn.innerText = "Error ❌";
     btn.disabled = false;
   }
+  
 
 });
 
+// SELECT ELEMENTS
+const fabContainer = document.getElementById("fabContainer");
+const fabToggle = document.getElementById("fabToggle");
+const heroSection = document.getElementById("hero");
+
+// TOGGLE OPEN/CLOSE
+fabToggle.addEventListener("click", () => {
+  fabContainer.classList.toggle("active");
+});
+
+// SHOW AFTER HERO
+window.addEventListener("scroll", () => {
+  const rect = heroSection.getBoundingClientRect();
+
+  if (rect.bottom <= 0) {
+    fabContainer.classList.add("show");
+  } else {
+    fabContainer.classList.remove("show");
+    fabContainer.classList.remove("active"); // auto close
+  }
+});
 
 
 
